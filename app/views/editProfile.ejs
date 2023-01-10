@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    background: rgb(99, 39, 120)
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+    </style>
+</head>
+<body>
+    <form action="/editProfile" method="post" enctype="multipart/form-data">
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src=""><span class="font-weight-bold"></span><span class="text-black-50"></span><span></span></div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="row mt-3">
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <label><b>First Name</b></label><br>
+                            <input type="text" name="fname" placeholder="Enter Your Name" value="<%= values.fname%>">
+                            <br>
+                            <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error1 %>
+                                </div>
+                                <% } %>
+                        </div><br>
+                                    <hr>
+                                    <label><b>Last name</b></label><br>
+                            <input type="text" name="lname" placeholder="Enter Your Last Name" value="<%= values.lname%>">
+                            <br>
+                            <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error2 %>
+                                </div>
+                                <% } %>
+                        </div><br>
+                                </div>
+                                <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label><b>Email:</b></label><br>
+                                            <input type="Email" name="email" placeholder="Enter Your Email Id" value="<%= values.email%>">
+                                            <br>
+                                            <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                                                <div style="color: red;">
+                                                    <%= error3 %>
+                                                </div>
+                                                <% } %>
+                                        </div><br>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <label><b>Gender:</b></label><br>
+                                        <input type="radio" id="gender" name="gender" value="male" <%=values.gender ? 'checked' :'' %>>&nbsp;Male
+                                        <input class="ml-4" type="radio" id="gender" name="gender" value="female" <%=values.gender? 'checked' :'' %>>&nbsp;Female
+                                        <input class="ml-4" type="radio" id="gender" name="gender" value="others" <%=values.gender? 'checked' :'' %>>&nbsp;others
+                                        <br>
+                                        <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+                                            <div style="color: red;">
+                                                <%= error4 %>
+                                            </div>
+                                            <% } %>
+                                        </div><br>
+                                        <hr>
+                                        <div class="row">
+                                            <%=values.hobby %>
+                                            <label><b>Hobby:</b></label><br>
+                
+                                            <input type="checkbox" value="Dancing" name="hobby" <%=values.hobby== "Dancing" ? 'checked' :'' %>>Dancing
+                                            <input type="checkbox" value="Reading" name="hobby" <%=values.hobby== "Reading" ? 'checked' :'' %>>Reading
+                                            <input type="checkbox" value="Travelling" name="hobby" <%=values.hobby=="Travelling" ? 'checked' :'' %>>Travelling<br>
+                                            <input type="checkbox" value="Indoor game" name="hobby" <%=values.hobby=="Indoor game" ? 'checked' :'' %>>Indoor game
+                                            <input type="checkbox" value="music" name="hobby" <%=values.hobby=="music" ? 'checked' :'' %>>music
+                                            <input type="checkbox" value="Bike riding" name="hobby" <%=values.hobby=="Bike riding" ? 'checked' :'' %>>Bike riding
+                                            <br>
+                                            <% if (typeof error6 !=='undefined' && error6.length> 0) { %>
+                                                <div style="color: red;">
+                                                    <%= error6 %>
+                                                </div>
+                                                <% } %>
+                                        </div><hr><br>
+                                    <div class="row">
+                                        <div>
+                                            <label><b>Mobile:</b></label><br>
+                                            <input type="text" name="phone" placeholder="Enter Your Mobile Number" value="<%= values.phone%>">
+                                            <br>
+                                            <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
+                                                <div style="color: red;">
+                                                    <%= error5 %>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <hr><br>
+                                    <div class="row">
+                                        <label><b>Images:</b></label><br>
+                                        <img src="<%= values.image %>" alt="Admin" class="rounded-circle" width="150"><br>
+                                        <input type="file" name="image"><br><br>
+                                        <input type="hidden" name="old_image" value="<%= values.image %>">
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <label><b>City:</b></label><br>
+                                        <select name="city">
+                                            <option>--None--</option>
+                                            <option value="Ahemdabad" <%=values.city=="Ahemdabad" ? 'selected' :'' %>>Ahemdabad</option>
+                                            <option value="Rajkot" <%=values.city=="Rajkot" ? 'selected' :'' %>>Rajkot</option>
+                                            <option value="Rurat" <%=values.city=="Rurat" ? 'selected' :'' %>>Surat</option>
+                                            <option value="Surendranagar" <%=values.city=="Surendranagar" ? 'selected' :'' %>>Surendranagar</option>
+                                            <option value="Morbi" <%=values.city=="Morbi" ? 'selected' :'' %>>Morbi</option>
+                                            <option value="Bhavnagar" <%=values.city=="Bhavnagar" ? 'selected' :'' %>>Bhavnagar</option>
+                                            <option value="Jamnagar" <%=values.city=="Jamnagar" ? 'selected' :'' %>>Jamnagar</option>
+                                            <option value="Junagadh" <%=values.city=="Junagadh" ? 'selected' :'' %>>Junagadh</option>
+                                            <br>
+                                            <% if (typeof error7 !=='undefined' && error7.length> 0) { %>
+                                                <div style="color: red;">
+                                                    <%= error7 %>
+                                                </div>
+                                                <% } %>
+                                        </select>
+                                    </div><br>
+                                    <div class="row">
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                   <input type="submit" class="btn btn-primary" value="Update">
+                    <a href="/profile" class="btn btn-danger" style="color: blanchedalmond;">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

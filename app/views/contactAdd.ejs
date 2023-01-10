@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <center>
+        <table border="1" bordercolor="black" cellspacing="0" cellpadding="30">
+            <tr>
+                <td>
+                    <form action="/contactAdd" method="post">
+                        <div>
+                            <label>
+                                <b>Name:</b>
+                            </label><br>
+                            <input type="text" name="name" placeholder="Enter Your Name">
+                            <br>
+                            <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error1 %>
+                                </div>
+                                <% } %>
+                        </div><br>
+                        <div>
+                            <label>
+                                <b>Email:</b>
+                            </label><br>
+                            <input type="text" name="email" placeholder="Enter Your email">
+                            <br>
+                            <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error2 %>
+                                </div>
+                                <% } %>
+                        </div><br>
+                        <div>
+                        <label>
+                            <b>Contact:</b>
+                        </label><br>
+                        <input type="text" name="phone" placeholder="Enter Your phone">
+                        <br>
+                        <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                            <div style="color: red;">
+                                <%= error3 %>
+                            </div>
+                            <% } %>
+                        </div><br>
+                        <div>
+                        <label>
+                            <b>Message:</b>
+                        </label><br>
+                        <input type="text" name="message" placeholder="Enter Your message">
+                        <br>
+                        <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+                            <div style="color: red;">
+                                <%= error4 %>
+                            </div>
+                            <% } %>
+                        </div><br>
+                        <div>
+                        <label>
+                            <b>Date:</b>
+                        </label><br>
+                        <input type="date" name="date" placeholder="Enter Your date">
+                        <br>
+                        <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
+                            <div style="color: red;">
+                                <%= error5 %>
+                            </div>
+                            <% } %>
+                        </div><br>
+                        <div>
+                            <button type="submit">Okk</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

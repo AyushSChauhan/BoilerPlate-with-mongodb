@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+
+<body>
+    <center>
+        <table border="1" bordercolor="black" cellspacing="0" cellpadding="30">
+            <tr>
+                <td>
+
+                    <form action="/login" method="post">
+                        <div>
+                            <label>
+                                <b>Email:</b>
+                            </label><br>
+                            <input type="Email" name="email" placeholder="Enter Your Email Id" required>
+                        </div><br>
+                        <div>
+                            <label>
+                                <b>Possword:</b>
+                            </label><br>
+                            <input type="password" name="password" placeholder="Enter Your Possword" required>
+                        </div><br>
+                        <div>
+                            <a style="padding-left: 80px;" href="/fpassword"><small>forget
+                                    password?</small></a>
+                        </div><br>
+                        <div>
+                            <button type="submit">Log in</button>
+                            <button><a href="/register">New Registration</a></button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

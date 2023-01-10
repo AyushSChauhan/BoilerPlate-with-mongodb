@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <center>
+        <table border="1" bordercolor="black" cellspacing="0" cellpadding="30">
+            <tr>
+                <td>
+                    <form action="/testimonialUpdate/<%=values._id %>" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label>
+                                <b>Name:</b>
+                            </label><br>
+                            <input type="text" name="name" placeholder="Enter Your Name" value="<%=values.name%>">
+                            <br>
+                            <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error1 %>
+                                </div>
+                                <% } %>
+                        </div><br>
+                        <div>
+                            <label>
+                                <b>Designation:</b>
+                            </label><br>
+                            <input type="text" name="desg" placeholder="Enter Your text" value="<%=values.desg%>">
+                            <br>
+                            <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error10 %>
+                                </div>
+                                <% } %>
+                        </div><br>
+                        <div>
+                        <label>
+                            <b>Description:</b>
+                        </label><br>
+                        <input type="text" name="desc" placeholder="Enter Your text" value="<%=values.desc%>">
+                        <br>
+                        <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                            <div style="color: red;">
+                                <%= error3 %>
+                            </div>
+                            <% } %>
+                        </div><br>
+                        <div>
+                            <label><b>Images:</b></label><br>
+                            <img src="/<%= values.image %>" alt="Admin" class="rounded-circle" width="150"><br>
+                                        <input type="file" name="image"><br><br>
+                        </div><br>
+                        <div>
+                            <button type="submit">Okk</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>
